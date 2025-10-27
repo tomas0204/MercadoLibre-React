@@ -1,10 +1,12 @@
 import './App.css'
+import FooterML from './components/shared/Footer'
 
 function App() {
 
   return (
     <>
-      <h1>hola</h1>
+      
+      <FooterML />
     </>
   )
 }
