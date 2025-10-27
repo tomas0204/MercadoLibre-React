@@ -1,12 +1,12 @@
 import './App.css'
-import Menu from './components/shared/Menu'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import FooterML from './components/shared/Footer'
 
 function App() {
 
   return (
     <>
-      <Menu />
+      
+      <FooterML />
     </>
   )
 }
