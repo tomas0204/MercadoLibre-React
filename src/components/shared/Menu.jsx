@@ -7,7 +7,7 @@ function Menu() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand as={Link}>Mercado Libre</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/home"}>Mercado Libre</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -15,7 +15,7 @@ function Menu() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link to={"/"}>Home</Nav.Link>
+            <Nav.Link as={Link} to={"/home"}>Home</Nav.Link>
             <NavDropdown title="Productos" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Destacados</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -39,7 +39,7 @@ function Menu() {
             </Button>
           </Form>
           <Nav className='ps-5 pe-5'>
-            <Nav.Link to={"/"}>Login</Nav.Link>
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
