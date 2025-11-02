@@ -5,6 +5,7 @@ import Menu from './components/shared/Menu'
 import Home from './components/pages/Home'
 import { Routes, Route } from 'react-router';
 import Login from './components/pages/Login';
+import Register from './components/pages/Register'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
         </Routes>
         <FooterML />

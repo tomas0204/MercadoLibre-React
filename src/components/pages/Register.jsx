@@ -1,16 +1,23 @@
 import { useState } from "react";
 import { Form, Button, Card, Container, Row, Col } from "react-bootstrap";
-import{ Link, NavLink} from 'react-router';
+import{ Link} from 'react-router';
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
-    alert("Inicio de sesión simulado");
+    console.log("Confirm Password:", confirmPassword);
+    if (password !== confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    } else {
+      alert("Registro simulado");
+    }
   };
 
   return (
@@ -18,7 +25,7 @@ function Login() {
       <Row className="w-100 justify-content-center">
         <Col md={4}>
           <Card className="p-4 shadow-sm">
-            <h3 className="text-center mb-4">Iniciar Sesión</h3>
+            <h3 className="text-center mb-4">Registrarse</h3>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formEmail" className="mb-3">
                 <Form.Label>Email</Form.Label>
@@ -41,12 +48,22 @@ function Login() {
                   required
                 />
               </Form.Group>
+              <Form.Group controlId="formPassword" className="mb-3">
+                <Form.Label>Confirmar Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Ingresa tu contraseña"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </Form.Group>
 
               <Button variant="primary" type="submit" className="w-100">
-                Login
+                Register
               </Button>
-              <Button as={Link} to={"/register"} variant="transparent" className="w-100" style={{ marginTop: '10px', color: '#3483FA' }}>
-                or sign up
+              <Button as={Link} to={"/login"} variant="transparent" className="w-100" style={{ marginTop: '10px', color: '#3483FA' }}>
+                or login
               </Button>
             </Form>
           </Card>
